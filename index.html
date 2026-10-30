@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover stylish sneakers, running shoes and casual footwear at SoleMate.">
+  <title>SoleMate | Find Your Perfect Pair</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a href="#" class="logo">SOLE<span>MATE.</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        🔍
+      </button>
+      <button class="cart-button" id="cartToggle">
+        🛒 Cart <span id="cartCount">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- Search -->
+  <div class="search-bar" id="searchBar" hidden>
+    <input type="search" id="searchInput"
+      placeholder="Search shoes by name...">
+    <button id="closeSearch" aria-label="Close search">✕</button>
+  </div>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">STEP INTO SOMETHING BETTER</p>
+        <h1>Find Your<br>Perfect <span>Pair.</span></h1>
+        <p class="hero-description">
+          Discover footwear that combines comfort, quality,
+          and style. Every step starts here.
+        </p>
+        <a href="#products" class="primary-btn">Explore Collection →</a>
+        <div class="hero-stats">
+          <div><strong>50+</strong><small>Styles</small></div>
+          <div><strong>1,000+</strong><small>Happy Customers</small></div>
+          <div><strong>4.8/5</strong><small>Customer Rating</small></div>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85"
+          alt="Bright red athletic sneaker">
+        <div class="floating-card">
+          <span>🔥 Trending Now</span>
+          <strong>Everyday Sneakers</strong>
+          <small>Style meets comfort</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories section" id="categories">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">SHOP YOUR STYLE</p>
+          <h2>Explore Categories</h2>
+        </div>
+      </div>
+
+      <div class="category-grid">
+        <button class="category-card active" data-category="All">
+          <span>👟</span><strong>All Shoes</strong>
+        </button>
+        <button class="category-card" data-category="Sneakers">
+          <span>🏃</span><strong>Sneakers</strong>
+        </button>
+        <button class="category-card" data-category="Running">
+          <span>⚡</span><strong>Running</strong>
+        </button>
+        <button class="category-card" data-category="Casual">
+          <span>✨</span><strong>Casual</strong>
+        </button>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products section" id="products">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2>Featured Shoes</h2>
+          <p class="muted">Find the right fit for every occasion.</p>
+        </div>
+        <select id="sortSelect" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+        </select>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <!-- Products are added by JavaScript -->
+      </div>
+
+      <p class="empty-message" id="emptyMessage" hidden>
+        No shoes found. Try another search or category.
+      </p>
+    </section>
+
+    <!-- About -->
+    <section class="about section" id="about">
+      <div class="about-image">
+        <img
+          src="https://images.unsplash.com/photo-1495555961986-6d4c1ecb7be3?auto=format&fit=crop&w=900&q=85"
+          alt="Stylish sneakers ready for everyday wear">
+      </div>
+      <div class="about-content">
+        <p class="eyebrow">ABOUT SOLEMATE</p>
+        <h2>Good Shoes.<br>Great Journeys.</h2>
+        <p>
+          At SoleMate, we believe that the right shoes do more
+          than complete your outfit. They help you move confidently,
+          comfortably, and in your own style.
+        </p>
+        <div class="benefit">
+          <span>✓</span>
+          <div><strong>Quality First</strong>
+            <p>Footwear selected with comfort and durability in mind.</p>
+          </div>
+        </div>
+        <div class="benefit">
+          <span>✓</span>
+          <div><strong>Styles for Everyone</strong>
+            <p>From everyday casual shoes to sporty sneakers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter section" id="contact">
+      <p class="eyebrow">STAY IN THE LOOP</p>
+      <h2>Fresh Styles. Straight to You.</h2>
+      <p>Join our newsletter for updates, new arrivals, and offers.</p>
+      <form id="newsletterForm">
+        <input type="email" id="emailInput"
+          placeholder="Enter your email address" required>
+        <button type="submit" class="primary-btn">Subscribe</button>
+      </form>
+      <p id="newsletterMessage" class="form-message" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <!-- Cart Drawer -->
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="cart-drawer" id="cartDrawer"
+    aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="cartClose" class="icon-btn" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+      <button class="primary-btn checkout-btn" id="checkoutBtn">
+        Proceed to Checkout
+      </button>
+      <p class="muted small-text">
+        Demo project only. No real payment is processed.
+      </p>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <a href="#home" class="logo">SOLE<span>MATE.</span></a>
+    <p>Walk your way. Step with confidence.</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="copyright">
+      © <span id="year"></span> SoleMate. College project demo.
+    </p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
